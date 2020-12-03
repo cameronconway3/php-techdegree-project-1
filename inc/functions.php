@@ -74,5 +74,11 @@ function printQuote($array) {
     }
     $quoteTemplate .=  "</p>";
 
-    echo $quoteTemplate;
+    return $quoteTemplate;
+}
+
+function randomBackgroundColour() {
+    // Generate and random colour using rgb(), each value in rgb is between 0 and 255
+    $backgroundColour = "rgb(" . rand(0,255) . "," . rand(0,255) . "," . rand(0,255) . ")";
+    return $backgroundColour;
 }
