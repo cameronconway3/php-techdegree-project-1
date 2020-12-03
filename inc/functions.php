@@ -28,6 +28,9 @@ $quotes = array(
         "source" => "J.R.R. Tolkien",
         "citation" => "The Two Towers",
         "year" => 1954,
+        "tags" => array(
+            'Fantasy', 'Fiction', 'Heroic Romance'
+        ),
     ),
     array(
         "quote" => "To define is to limit.",
@@ -64,6 +67,10 @@ function printQuote($array) {
     // If 'year' is set, add it to the template.
     if(isset($randomQuote["year"])) {
         $quoteTemplate .= "<span class='year'>" . $randomQuote["year"] . "</span>";
+    }
+    // If 'tags' is set, impode the array and display as a comma seperated list
+    if(isset($randomQuote["tags"])) {
+        $quoteTemplate .= "<br>Tags: " . implode(", ", $randomQuote["tags"]);
     }
     $quoteTemplate .=  "</p>";
 
